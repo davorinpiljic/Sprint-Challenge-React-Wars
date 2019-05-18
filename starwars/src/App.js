@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-
+const CharList = (props) => {
+    return(<div>{props.names.map(element=>{
+      return <li>{element.name}</li>
+    })}</div>)
+}
 class App extends Component {
   constructor() {
     super();
@@ -8,11 +12,9 @@ class App extends Component {
       starwarsChars: []
     };
   }
-
   componentDidMount() {
     this.getCharacters('https://swapi.co/api/people/');
   }
-
   getCharacters = URL => {
     // feel free to research what this code is doing.
     // At a high level we are calling an API to fetch some starwars data from the open web.
@@ -28,14 +30,15 @@ class App extends Component {
         throw new Error(err);
       });
   };
-
   render() {
     return (
       <div className="App">
         <h1 className="Header">React Wars</h1>
+        <div>
+        <CharList names={this.state.starwarsChars} />
+        </div>
       </div>
     );
   }
 }
-
 export default App;
