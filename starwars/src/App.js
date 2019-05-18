@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-const CharList = (props) => {
-    return(<div>{props.names.map(element=>{
-      return <li>{element.name}</li>
-    })}</div>)
-}
+import './components/StarWars.css'
+import CharList from './CharacterList'
+
 class App extends Component {
   constructor() {
     super();
@@ -34,8 +32,8 @@ class App extends Component {
     return (
       <div className="App">
         <h1 className="Header">React Wars</h1>
-        <div>
-        <CharList names={this.state.starwarsChars} />
+        <div className="list">
+          <CharList names={this.state.starwarsChars} />
         </div>
       </div>
     );
