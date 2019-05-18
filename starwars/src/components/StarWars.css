@@ -1,0 +1,17 @@
+.list {
+  background-color: gray;
+  opacity: .9;
+  color: orange;
+  width: 300px;
+  border: black solid 1.5px;
+  border-radius: 6px;
+  padding: 6px;
+  font-style: sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.Header {
+  font-size: 6.4rem;
+  color: white;
+}
